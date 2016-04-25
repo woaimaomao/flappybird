@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewAnimator
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:loopViews="true"
+    android:layout_gravity="center"
+    tools:context="com.example.yongledu.myapplication.MainActivity">
+
+    <TextView
+        android:layout_gravity="center"
+        android:id="@+id/tv1"
+        android:gravity="center"
+        android:text="Hello World!"
+        android:background="#ff00aa"
+        android:translationZ="100dp"
+        android:layout_width="@dimen/text_view_width"
+        android:layout_height="@dimen/text_view_width" />
+    <TextView
+        android:id="@+id/tv2"
+        android:background="#0099aa"
+        android:text="好评返现2元"
+        android:gravity="center"
+        android:layout_width="@dimen/text_view_width"
+        android:layout_height="@dimen/text_view_width" />
+    <TextView
+        android:id="@+id/tv3"
+        android:background="#ffcccc"
+        android:text="快乐周末拉拉"
+        android:gravity="center"
+        android:layout_width="@dimen/text_view_width"
+        android:layout_height="@dimen/text_view_width" />
+</ViewAnimator>

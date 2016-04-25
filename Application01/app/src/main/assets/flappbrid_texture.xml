@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<texture>
+    <!-- Created with TexturePacker http://texturepacker.com -->
+    <!-- $TexturePacker:SmartUpdate:549dd235a4b058250b79c1f403d2b372$ -->
+    <textureregion id="0" src="background1.png" x="292" y="2" width="288" height="512" />
+    <textureregion id="1" src="background2.png" x="2" y="2" width="288" height="512" />
+    <textureregion id="2" src="bird_blue000.png" x="359" y="682" width="40" height="32" />
+    <textureregion id="3" src="bird_blue001.png" x="338" y="716" width="40" height="32" />
+    <textureregion id="4" src="bird_blue002.png" x="317" y="682" width="40" height="32" />
+    <textureregion id="5" src="bird_orange000.png" x="300" y="754" width="40" height="32" />
+    <textureregion id="6" src="bird_orange001.png" x="296" y="720" width="40" height="32" />
+    <textureregion id="7" src="bird_orange002.png" x="278" y="788" width="40" height="32" />
+    <textureregion id="8" src="bird_red000.png" x="140" y="804" width="40" height="32" />
+    <textureregion id="9" src="bird_red001.png" x="98" y="804" width="40" height="32" />
+    <textureregion id="10" src="bird_red002.png" x="56" y="804" width="40" height="32" />
+    <textureregion id="11" src="flappingBird.png" x="172" y="630" width="208" height="50" />
+    <textureregion id="12" src="gameOver.png" x="200" y="954" width="204" height="54" />
+    <textureregion id="13" src="guide.png" x="56" y="630" width="114" height="100" />
+    <textureregion id="14" src="land.png" x="56" y="516" width="336" height="112" />
+    <textureregion id="15" src="medal000.png" x="243" y="682" width="46" height="46" />
+    <textureregion id="16" src="medal001.png" x="222" y="730" width="46" height="46" />
+    <textureregion id="17" src="medal002.png" x="174" y="730" width="46" height="46" />
+    <textureregion id="18" src="number000.png" x="256" y="836" width="24" height="36" />
+    <textureregion id="19" src="number001.png" x="260" y="798" width="16" height="36" />
+    <textureregion id="20" src="number002.png" x="230" y="912" width="24" height="36" />
+    <textureregion id="21" src="number003.png" x="230" y="874" width="24" height="36" />
+    <textureregion id="22" src="number004.png" x="291" y="682" width="24" height="36" />
+    <textureregion id="23" src="number005.png" x="270" y="730" width="24" height="36" />
+    <textureregion id="24" src="number006.png" x="234" y="798" width="24" height="36" />
+    <textureregion id="25" src="number007.png" x="230" y="836" width="24" height="36" />
+    <textureregion id="26" src="number008.png" x="208" y="798" width="24" height="36" />
+    <textureregion id="27" src="number009.png" x="182" y="798" width="24" height="36" />
+    <textureregion id="28" src="play.png" x="56" y="732" width="116" height="70" />
+    <textureregion id="29" src="rate.png" x="172" y="682" width="69" height="46" />
+    <textureregion id="30" src="ready.png" x="2" y="954" width="196" height="62" />
+    <textureregion id="31" src="scoreBoard.png" x="2" y="838" width="226" height="114" />
+    <textureregion id="32" src="smallnumber000.png" x="286" y="768" width="12" height="18" />
+    <textureregion id="33" src="smallnumber001.png" x="382" y="630" width="8" height="18" />
+    <textureregion id="34" src="smallnumber002.png" x="272" y="768" width="12" height="18" />
+    <textureregion id="35" src="smallnumber003.png" x="258" y="778" width="12" height="18" />
+    <textureregion id="36" src="smallnumber004.png" x="244" y="778" width="12" height="18" />
+    <textureregion id="37" src="smallnumber005.png" x="230" y="778" width="12" height="18" />
+    <textureregion id="38" src="smallnumber006.png" x="216" y="778" width="12" height="18" />
+    <textureregion id="39" src="smallnumber007.png" x="202" y="778" width="12" height="18" />
+    <textureregion id="40" src="smallnumber008.png" x="188" y="778" width="12" height="18" />
+    <textureregion id="41" src="smallnumber009.png" x="174" y="778" width="12" height="18" />
+    <textureregion id="42" src="waterpipe.png" x="2" y="516" width="52" height="320" />
+</texture>
