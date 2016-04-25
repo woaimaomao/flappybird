@@ -13,6 +13,7 @@ import java.util.List;
  */
 public class Guide implements GameImage {
 
+    private final int offset = 100;
     private int x;
     private int y;
     private int width;
@@ -32,7 +33,10 @@ public class Guide implements GameImage {
         this.bitmaps = bmps;
         this.bmp = bitmaps[0];
         this.dstReady = new Rect(x, y, x+bmp.getWidth()*SCALE_READY_X, y+bmp.getHeight()*SCALE_READY_Y);
-        this.dstGuide = new Rect(x, dstReady.bottom, x+bmp.getWidth()*SCALE_GUIDE, dstReady.bottom + bitmaps[1].getHeight()*SCALE_GUIDE);
+        this.dstGuide = new Rect(dstReady.left+offset,
+                                 dstReady.bottom,
+                                 dstReady.left+offset+bmp.getWidth()*SCALE_GUIDE,
+                                 dstReady.bottom + bitmaps[1].getHeight()*SCALE_GUIDE);
         this.x = x;
         this.y = y;
         this.screenX = width;
@@ -74,8 +78,8 @@ public class Guide implements GameImage {
     @Override
     public void drawSelf(Canvas canvas) {
 
-        canvas.drawBitmap(bitmaps[0],null,dstGuide,mPaint);
-        canvas.drawBitmap(bitmaps[1],null,dstReady,mPaint);
+        canvas.drawBitmap(bitmaps[0],null,dstReady,mPaint);
+        canvas.drawBitmap(bitmaps[1],null,dstGuide,mPaint);
 
     }
 

@@ -8,7 +8,8 @@ import android.graphics.Rect;
 /**
  * Created by Bill-Gates on 2016-4-24.
  */
-public class Crash implements GameImage{
+public class Crash implements GameImage {
+    private final int offset = 200;
     private int x;
     private int y;
     private int width;
@@ -24,11 +25,14 @@ public class Crash implements GameImage{
     private final int SCALE_READY_Y = 3;
     private final int SCALE_GUIDE = 3;
 
-    public Crash(Bitmap[] bmps, int x, int y, int width, int height){
+    public Crash(Bitmap[] bmps, int x, int y, int width, int height) {
         this.bitmaps = bmps;
         this.bmp = bitmaps[0];
-        this.dstOver = new Rect(x, y, x+bmp.getWidth()*SCALE_READY_X, y+bmp.getHeight()*SCALE_READY_Y);
-         this.dstPlay= new Rect(x, dstOver.bottom, x+bitmaps[1].getWidth()*SCALE_GUIDE, dstOver.bottom + bitmaps[1].getHeight()*SCALE_GUIDE);
+        this.dstOver = new Rect(x, y, x + bmp.getWidth() * SCALE_READY_X, y + bmp.getHeight() * SCALE_READY_Y);
+        this.dstPlay = new Rect(dstOver.left + offset,
+                                dstOver.bottom + offset,
+                                dstOver.left + offset + bitmaps[1].getWidth() * SCALE_GUIDE,
+                                dstOver.bottom + bitmaps[1].getHeight() * SCALE_GUIDE + offset);
         this.x = dstPlay.left;
         this.y = dstPlay.top;
         this.screenX = width;
@@ -69,8 +73,8 @@ public class Crash implements GameImage{
     @Override
     public void drawSelf(Canvas canvas) {
 
-        canvas.drawBitmap(bitmaps[0],null, dstOver,mPaint);
-        canvas.drawBitmap(bitmaps[1],null, dstPlay,mPaint);
+        canvas.drawBitmap(bitmaps[0], null, dstOver, mPaint);
+        canvas.drawBitmap(bitmaps[1], null, dstPlay, mPaint);
 
     }
 

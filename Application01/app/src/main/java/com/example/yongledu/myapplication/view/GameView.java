@@ -155,13 +155,13 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback,Runn
         score = new Score(numBmps,mScreenWidth/3, mScreenHeight/5, mScreenWidth, mScreenHeight);
 
         // 创建引导界面
-        ImageInfo guideInfo = infoMap.get("guide.png");
-        Bitmap guideBmp = Bitmap.createBitmap(srcBmp, guideInfo.getX(), guideInfo.getY(), guideInfo.getWidth(), guideInfo.getHeight());
-        guides[0] = guideBmp;
         ImageInfo readyInfo = infoMap.get("ready.png");
         Bitmap readyBmp = Bitmap.createBitmap(srcBmp, readyInfo.getX(), readyInfo.getY(), readyInfo.getWidth(), readyInfo.getHeight());
-        guides[1] = readyBmp;
-        guide = new Guide(guides,mScreenWidth/5+100,mScreenHeight/4+100,mScreenWidth,mScreenHeight);
+        guides[0] = readyBmp;
+        ImageInfo guideInfo = infoMap.get("guide.png");
+        Bitmap guideBmp = Bitmap.createBitmap(srcBmp, guideInfo.getX(), guideInfo.getY(), guideInfo.getWidth(), guideInfo.getHeight());
+        guides[1] = guideBmp;
+        guide = new Guide(guides,mScreenWidth/6,mScreenHeight/4+200,mScreenWidth,mScreenHeight);
 
         // 创建失败界面
         ImageInfo crashInfo0 = infoMap.get("gameOver.png");
@@ -171,7 +171,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback,Runn
         ImageInfo crashInfo1 = infoMap.get("play.png");
         Bitmap crashBmp1 = Bitmap.createBitmap(srcBmp, crashInfo1.getX(), crashInfo1.getY(), crashInfo1.getWidth(), crashInfo1.getHeight());
         crashes[1] = crashBmp1;
-        crash = new Crash(crashes,mScreenWidth/5+100,mScreenHeight/4+100,mScreenWidth,mScreenHeight);
+        crash = new Crash(crashes,mScreenWidth/6,mScreenHeight/4+100,mScreenWidth,mScreenHeight);
 
         // 线程标志开始
         state = true;
