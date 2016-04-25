@@ -61,6 +61,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback,Runn
     private Crash crash;
     private boolean showCrash = false;
     private boolean restart = false;
+    private int speedUp;
 
     public GameView(Context context) {
         super(context);
@@ -99,6 +100,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback,Runn
         isCrash = false;
         showCrash = false;
         mScore = 0;
+        speedUp = 5;
         // 提前准备声音
         SoundPlayTool.getInstance(getContext());
     }
@@ -238,7 +240,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback,Runn
     }
 
 
-    private int speedUp = 5;
     // 处理游戏中精灵的逻辑
     private synchronized void logic(){
 
@@ -249,6 +250,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback,Runn
 
             bird.flyToDie(bird.getY() + speedUp);
             if((bird.getY() + bird.getHeight()) > land.getY()+30){
+                SoundPlayTool.getInstance(getContext()).playSound(0);
                 showCrash = true;
                 return;
             }
@@ -390,12 +392,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback,Runn
                 int tx = (int) event.getX();
                 int ty = (int) event.getY();
                 if(showCrash){
-                    Log.i(TAG, "onTouchEvent: 1111111111");
                     if(tx > crash.getX()
                        && tx < crash.getX()+crash.getWidth()
                        && ty > crash.getY()
                        && ty < crash.getY() + crash.getHeight()){
-                        Log.i(TAG, "onTouchEvent: showCrash="+showCrash);
+                        SoundPlayTool.getInstance(getContext()).playSound(3);
                         reset();
                         restart = true;
                     }
