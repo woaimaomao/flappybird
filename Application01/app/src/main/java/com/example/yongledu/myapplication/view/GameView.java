@@ -60,6 +60,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback,Runn
     private boolean isStart = false;
     private Crash crash;
     private boolean showCrash = false;
+    private boolean restart = false;
 
     public GameView(Context context) {
         super(context);
@@ -387,16 +388,19 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback,Runn
             case MotionEvent.ACTION_DOWN:
                 int tx = (int) event.getX();
                 int ty = (int) event.getY();
-                if(!isCrash){
-                    if(showCrash){
-                        if(tx > crash.getX()
-                                && tx < crash.getX()+crash.getWidth()
-                                && ty > crash.getY()
-                                && ty < crash.getX() + crash.getHeight()){
-                            reset();
-                            mThread.start();
-                        }
+                if(showCrash){
+                    Log.i(TAG, "onTouchEvent: 1111111111");
+                    if(tx > crash.getX()
+                       && tx < crash.getX()+crash.getWidth()
+                       && ty > crash.getY()
+                       && ty < crash.getY() + crash.getHeight()){
+                        Log.i(TAG, "onTouchEvent: showCrash="+showCrash);
+                        reset();
+                        restart = true;
                     }
+                    return true;
+                }
+                if(!isCrash){
                     return true;
                 }
                 break;
@@ -411,9 +415,12 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback,Runn
                         bird.flyUp(bird.getY() - 150);
                         return true;
                     }
-                }else{
+                }else if(!restart){
                     isStart = true;
                     mThread.start();
+                }else if (restart){
+                    restart = false;
+                    showCrash = false;
                 }
                 break;
         }
