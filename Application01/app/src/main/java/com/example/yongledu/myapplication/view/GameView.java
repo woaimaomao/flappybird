@@ -98,6 +98,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback,Runn
         isStart = false;
         isCrash = false;
         showCrash = false;
+        mScore = 0;
         // 提前准备声音
         SoundPlayTool.getInstance(getContext());
     }
